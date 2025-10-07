@@ -10,8 +10,9 @@ function formatoPrecio($valor) {
 }
 ?>
 
+<div class="container">
+    <h1>🎟️ Evento Profesional</h1>
     <div class="ticket">
-        <h1>🎟️ Evento Profesional</h1>
         <div class="linea">
             <span>Inscripción</span>
             <span><?php echo formatoPrecio($inscripcion); ?></span>
@@ -26,3 +27,4 @@ function formatoPrecio($valor) {
             <span><?php echo formatoPrecio($total); ?></span>
         </div>
     </div>
+</div>

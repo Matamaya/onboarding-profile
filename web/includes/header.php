@@ -21,4 +21,3 @@
             </ul>
         </nav>
     </header>
-    <main>

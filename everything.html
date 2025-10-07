@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Proyecto PHP</title>
+    <link rel="stylesheet" href="../web/assets/css/styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Mi Proyecto PHP</h1>
+      <nav>
+        <ul>
+          <li><a href="./index.php">Inicio</a></li>
+          <li><a href="../web/sections/part1-profile.php">Perfil</a></li>
+          <li><a href="../web/sections/part2-music.php">Música</a></li>
+          <li><a href="../web/sections/part3-movies.php">Películas</a></li>
+          <li><a href="../web/sections/part4-menu.php">Menú</a></li>
+          <li><a href="../web/sections/part5-event.php">Evento</a></li>
+          <li><a href="../web/sections/part6-travel.php">Viaje</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="paneles" class="container">
+      <section id="panel-perfil" class="tab-panel active" role="tabpanel">
+        <?php include __DIR__ . '/sections/part1-profile.php'; ?>
+      </section>
+      <section id="panel-musica" class="tab-panel active" role="tabpanel">
+        <?php include __DIR__ . '/sections/part2-music.php'; ?>
+      </section>
+      <section id="panel-movies" class="tab-panel active" role="tabpanel">
+        <?php include __DIR__ . '/sections/part3-movies.php'; ?>
+      </section>
+      <section id="panel-menu" class="tab-panel active" role="tabpanel">
+        <?php include __DIR__ . '/sections/part4-menu.php'; ?>
+      </section>
+      <section id="panel-event" class="tab-panel active" role="tabpanel">
+        <?php include __DIR__ . '/sections/part5-event.php'; ?>
+      </section>
+      <section id="panel-travel" class="tab-panel active" role="tabpanel">
+        <?php include __DIR__ . '/sections/part6-travel.php'; ?>
+      </section>
+
+      <div class="container">
+        <h1>
+          <?php echo $titulo; ?>
+        </h1>
+        <section class="profile-card">
+          <img
+            src="../web/assets/img/image.png"
+            alt="Foto de perfil"
+            class="avatar"
+          />
+          <h2>
+            <?php echo $profile['name'] . ' ' . $profile['lastname']; ?>
+          </h2>
+          <p>
+            <strong>Edad:</strong>
+            <?php echo $profile['age']; ?>
+            años
+          </p>
+          <p>
+            <strong>Biografía:</strong>
+            <?php echo $profile['bio']; ?>
+          </p>
+
+          <h3>Hobbies</h3>
+          <ul>
+            <?php foreach ($profile['hobbies'] as $hobbie): ?>
+            <li>
+              <?php echo $hobbie; ?>
+            </li>
+            <?php endforeach; ?>
+          </ul>
+          <p>
+            <strong>Contacto:</strong>
+            <a href="mailto:<?php echo $profile['email']; ?>">
+              <?php echo $profile['email']; ?>
+            </a>
+          </p>
+        </section>
+      </div>
+
+      <div class="container">
+        <h1>Mi Canción Favorita</h1>
+        <section class="music-card">
+          <div class="music-icon">🎵</div>
+          <h2 class="song-title">
+            <?php echo $canciones['titulo']; ?>
+          </h2>
+          <p class="artist-name">
+            <?php echo $canciones['artista']; ?>
+          </p>
+        </section>
+      </div>
+
+      <div class="container">
+        <h1>🎥 Maratón de Películas 🍿</h1>
+        <p>
+          He reservado
+          <strong>
+            <?php echo $totalHours; ?>
+            horas
+          </strong>
+          para ver
+          <strong>
+            <?php echo $totalMovies; ?>
+            películas </strong
+          >.
+        </p>
+        <section class="card">
+          <h2>Lista de Películas</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>🎬 Película</th>
+                <th>⏱ Duración (horas)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php foreach ($movies as $movie): ?>
+              <tr>
+                <td>
+                  <?php echo $movie["title"]; ?>
+                </td>
+                <td>
+                  <?php echo $movie["duration"]." Horas"; ?>
+                </td>
+              </tr>
+              <?php endforeach; ?>
+            </tbody>
+          </table>
+        </section>
+      </div>
+
+      <div class="container">
+        <h1>🍴 Foodies de la Empresa</h1>
+
+        <table>
+          <thead>
+            <tr>
+              <th>🥘 Platillo</th>
+              <th>Precio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php foreach ($dish as $dish): ?>
+            <?php $formattedPrice = number_format($dish["price"], 2, ',', '.'); ?>
+            <tr>
+              <td>
+                <?php echo $dish["title"]; ?>
+              </td>
+              <td>
+                <?php echo $formattedPrice; ?>
+                €
+              </td>
+            </tr>
+            <?php endforeach; ?>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="container">
+        <h1>🎟️ Evento Profesional</h1>
+        <div class="ticket">
+          <div class="linea">
+            <span>Inscripción</span>
+            <span>
+              <?php echo formatoPrecio($inscripcion); ?>
+            </span>
+          </div>
+          <div class="linea">
+            <span>Taller adicional</span>
+            <span>
+              <?php echo formatoPrecio($taller); ?>
+            </span>
+          </div>
+          <hr />
+          <div class="linea total">
+            <span>Total</span>
+            <span>
+              <?php echo formatoPrecio($total); ?>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <h1>Mi próximo viaje</h1>
+        <section class="tarjeta-viaje">
+          <p>
+            Mi próximo viaje será a
+            <?php echo $destino; ?>, durante
+            <?php echo $dias; ?>
+            días ✈️
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div>
+        <p>Un proyecto para impulsar el aprendizaje @2025</p>
+      </div>
+    </footer>
+  </body>
+</html>

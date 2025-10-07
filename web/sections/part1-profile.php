@@ -12,12 +12,9 @@ $profile = [
 
 ?>
     <div class="container">
-        <header>
-            <h1><?php echo $titulo; ?></h1>
-        </header>
-
+        <h1><?php echo $titulo; ?></h1>
         <section class="profile-card">
-            <img src="../web/assets/img/perfil.jpg" alt="Foto de perfil" class="avatar">
+            <img src="../web/assets/img/image.png" alt="Foto de perfil" class="avatar">
             <h2><?php echo $profile['name'] . ' ' . $profile['lastname']; ?></h2>
             <p><strong>Edad:</strong> <?php echo $profile['age']; ?> años</p>
             <p><strong>Biografía:</strong> <?php echo $profile['bio']; ?></p>

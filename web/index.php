@@ -1,6 +1,6 @@
 <?php require __DIR__ . '/includes/header.php'; ?>
 
-<section id="paneles" class="container">
+<main id="paneles" class="container">
     <section id="panel-perfil" class="tab-panel active" role="tabpanel">
         <?php include __DIR__ . '/sections/part1-profile.php'; ?>
     </section>
@@ -19,6 +19,6 @@
     <section id="panel-travel" class="tab-panel active" role="tabpanel">
         <?php include __DIR__ . '/sections/part6-travel.php'; ?>
     </section>
-</section>
+</main>
 
 <?php require 'includes/footer.php'; ?>
