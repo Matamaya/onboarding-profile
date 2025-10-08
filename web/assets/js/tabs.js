@@ -2,16 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const buttons = document.querySelectorAll('.tabs button');
     const panels = document.querySelectorAll('.tab-panel');
 
-    buttons.forEach(button => {
+    buttons.forEach( (button, index) => {
         button.addEventListener('click', () => {
-            // Quitar active de todos los botones y paneles
-            buttons.forEach(btn => btn.classList.remove('active'));
+            // Quitar active de todos los paneles
             panels.forEach(panel => panel.classList.remove('active'));
-
-            // Activar el botón clicado y su panel
-            button.classList.add('active');
-            const target = document.getElementById(button.dataset.target);
-            if(target) target.classList.add('active');
+            panels[index].classList.add('active');
         });
     });
 });

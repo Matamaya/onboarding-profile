@@ -1,10 +1,10 @@
  <nav class="tabs">
     <ul>
-        <li><button data-target="panel-perfil" class="active">Perfil</button></li>
-        <li><button data-target="panel-musica">Música</button></li>
-        <li><button data-target="panel-movies">Películas</button></li>
-        <li><button data-target="panel-menu">Menú</button></li>
-        <li><button data-target="panel-event">Evento</button></li>
-        <li><button data-target="panel-travel">Viaje</button></li>
+        <li><button>Perfil</button></li>
+        <li><button>Música</button></li>
+        <li><button>Películas</button></li>
+        <li><button>Menú</button></li>
+        <li><button>Evento</button></li>
+        <li><button>Viaje</button></li>
     </ul>
 </nav>
