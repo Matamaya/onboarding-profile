@@ -15,25 +15,26 @@ $dish = [
 ];
 ?>
     <div class="container">
-        <h1>🍴 Foodies de la Empresa</h1>
+        <h1>🍴 Foodies: Mis platos preferidos</h1>
    
-
-    <table>
-            <thead>
-                <tr>
-                    <th>🥘 Platillo</th>
-                    <th>Precio</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($dish as $dish): ?>
-                    <?php $formattedPrice = number_format($dish["price"], 2, ',', '.'); ?>
+    <section class="card">
+        <table>
+                <thead>
                     <tr>
-                        <td><?php echo $dish["title"]; ?></td>
-                        <td><?php echo $formattedPrice; ?> €</td>
+                        <th>Platillo</th>
+                        <th>Precio</th>
                     </tr>
-                <?php endforeach; ?>
-            </tbody>
-    </table> 
+                </thead>
+                <tbody>
+                    <?php foreach ($dish as $dish): ?>
+                        <?php $formattedPrice = number_format($dish["price"], 2, ',', '.'); ?>
+                        <tr>
+                            <td><?php echo $dish["title"]; ?></td>
+                            <td><?php echo $formattedPrice; ?> €</td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+        </table> 
+    </section>
 
     </div>

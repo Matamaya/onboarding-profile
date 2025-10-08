@@ -23,7 +23,7 @@ foreach($movies as $movie) {
 
     <div class="container">
         <h1>🎥 Maratón de Películas 🍿</h1>
-        <p>
+        <p class="movies-desc">
             He reservado <strong><?php echo $totalHours; ?> horas</strong> 
             para ver <strong><?php echo $totalMovies; ?> películas</strong>.
         </p>

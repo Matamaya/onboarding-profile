@@ -14,20 +14,24 @@ $profile = [
     <div class="container">
         <h1><?php echo $titulo; ?></h1>
         <section class="profile-card">
-            <img src="../web/assets/img/image.png" alt="Foto de perfil" class="avatar">
-            <h2><?php echo $profile['name'] . ' ' . $profile['lastname']; ?></h2>
-            <p><strong>Edad:</strong> <?php echo $profile['age']; ?> años</p>
-            <p><strong>Biografía:</strong> <?php echo $profile['bio']; ?></p>
-            
+            <img src="../web/assets/img/astronaut.jpg" alt="Foto de perfil" class="avatar">
+
+            <div class="profile-info">
+                <h2><?php echo $profile['name'] . ' ' . $profile['lastname']; ?></h2>
+                <p><strong>Edad:</strong> <?php echo $profile['age']; ?> años</p>
+                <p><strong>Biografía:</strong> <?php echo $profile['bio']; ?></p>
+                <p><strong>Contacto:</strong> <a href="mailto:<?php echo $profile['email']; ?>"> <?php echo $profile['email']; ?> </a></p>
+            </div>
             <h3>Hobbies</h3>
             <ul>
                 <?php foreach ($profile['hobbies'] as $hobbie): ?>
                     <li><?php echo $hobbie; ?></li>
                 <?php endforeach; ?>
             </ul>
-            <p>
-            <strong>Contacto:</strong> 
-            <a href="mailto:<?php echo $profile['email']; ?>"> <?php echo $profile['email']; ?> </a>
-            </p>
+            
         </section>
     </div>
+
+
+
+    <link rel="stylesheet" href="../web/assets/css/styles.css">
